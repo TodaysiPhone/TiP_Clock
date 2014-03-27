@@ -14,14 +14,29 @@
 
 @implementation TCViewController
 
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    
+    /******** 1 ********/
+    [self updateClockLabel];
 }
 
-- (void)didReceiveMemoryWarning
-{
+/******** 1 ********/
+-(void)updateClockLabel {
+    
+    /******** 2 ********/
+    NSDateFormatter *clockFormat = [[NSDateFormatter alloc] init];
+    [clockFormat setDateFormat:@"hh:mm:ss a"];
+    
+    /******** 3 ********/
+    self.clockLabel.text = [clockFormat stringFromDate:[NSDate date]];
+    
+    /******** 4 ********/
+    [self performSelector:@selector(updateClockLabel) withObject:self afterDelay:1.0];
+}
+
+- (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }

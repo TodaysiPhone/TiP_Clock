@@ -10,4 +10,10 @@
 
 @interface TCViewController : UIViewController
 
+/******** 1 ********/
+@property (weak, nonatomic) IBOutlet UILabel *clockLabel;
+
+/******** 2 ********/
+-(void)updateClockLabel;
+
 @end
