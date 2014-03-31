@@ -23,15 +23,25 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OQu-2f-vLo">
+                                <rect key="frame" x="136" y="361" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="nightSwitchDidChangeValue:" destination="vXZ-lx-hvc" eventType="valueChanged" id="Di2-sg-nJS"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="OQu-2f-vLo" secondAttribute="centerX" id="Axp-dO-5nm"/>
                             <constraint firstAttribute="centerY" secondItem="JXb-hB-BNp" secondAttribute="centerY" id="DYn-qv-vGa"/>
+                            <constraint firstItem="OQu-2f-vLo" firstAttribute="top" secondItem="JXb-hB-BNp" secondAttribute="bottom" constant="54" id="N85-pr-OF8"/>
                             <constraint firstAttribute="centerX" secondItem="JXb-hB-BNp" secondAttribute="centerX" id="ifd-4e-VUi"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="clockLabel" destination="JXb-hB-BNp" id="LOd-61-9Ln"/>
+                        <outlet property="nightSwitch" destination="OQu-2f-vLo" id="hGE-fm-cMV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

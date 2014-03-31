@@ -18,27 +18,45 @@
     
     [super viewDidLoad];
     
-    /******** 1 ********/
     [self updateClockLabel];
+    
+    /******** 1 ********/
+    self.nightSwitch.on = NO;
 }
 
-/******** 1 ********/
 -(void)updateClockLabel {
     
-    /******** 2 ********/
     NSDateFormatter *clockFormat = [[NSDateFormatter alloc] init];
     [clockFormat setDateFormat:@"hh:mm:ss a"];
     
-    /******** 3 ********/
     self.clockLabel.text = [clockFormat stringFromDate:[NSDate date]];
     
-    /******** 4 ********/
     [self performSelector:@selector(updateClockLabel) withObject:self afterDelay:1.0];
+}
+
+/******** 1 ********/
+-(IBAction)nightSwitchDidChangeValue:(id)sender {
+    
+    /******** 2 ********/
+    if (self.nightSwitch.on) {
+        
+        /******** 3 ********/
+        self.clockLabel.textColor = [UIColor whiteColor];
+        self.view.backgroundColor = [UIColor blackColor];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    }
+    
+    /******** 4 ********/
+    else {
+        /******** 5 ********/
+        self.clockLabel.textColor = [UIColor blackColor];
+        self.view.backgroundColor = [UIColor whiteColor];
+        [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleDefault];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

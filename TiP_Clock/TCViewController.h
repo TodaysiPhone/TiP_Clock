@@ -10,10 +10,14 @@
 
 @interface TCViewController : UIViewController
 
-/******** 1 ********/
 @property (weak, nonatomic) IBOutlet UILabel *clockLabel;
 
-/******** 2 ********/
 -(void)updateClockLabel;
+
+/******** 1 ********/
+@property (strong, nonatomic) IBOutlet UISwitch *nightSwitch;
+
+/******** 2 ********/
+-(IBAction)nightSwitchDidChangeValue:(id)sender;
 
 @end
